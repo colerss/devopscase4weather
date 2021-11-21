@@ -24,7 +24,7 @@
             <TabItem Header="Weather stats"></TabItem>
         </TabControl>
         <GroupBox Grid.Column="3"  Margin="5" Background="White" Header="Change Location"></GroupBox>
-        <Button  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="1" Margin="5" Content="Refresh" Command="{Binding}" CommandParameter="Refresh"  />
+        <Button  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="1" Margin="5" Content="Refresh" Command="{Binding}" CommandParameter="Refresh"   />
         <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" Grid.Row="1" Grid.Column="3" Margin="5" Content="Quit" Command="{Binding CloseWindowCommand, Mode=OneWay}" 
         CommandParameter="{Binding ElementName=DisplayWindow}" />
     </Grid>

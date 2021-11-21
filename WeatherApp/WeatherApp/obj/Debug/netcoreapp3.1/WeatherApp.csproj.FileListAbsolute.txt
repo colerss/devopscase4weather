@@ -25,3 +25,4 @@ C:\Users\vdb\Documents\GitHub\devopscase4weather\WeatherApp\WeatherApp\obj\Debug
 C:\Users\vdb\Documents\GitHub\devopscase4weather\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.1\WeatherApp.dll
 C:\Users\vdb\Documents\GitHub\devopscase4weather\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.1\WeatherApp.pdb
 C:\Users\vdb\Documents\GitHub\devopscase4weather\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.1\WeatherApp.genruntimeconfig.cache
+C:\Users\vdb\Documents\GitHub\devopscase4weather\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.1\Dapper.dll
