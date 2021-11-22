@@ -19,13 +19,13 @@ namespace WeatherApp.ViewModels.MainViewModels
             return true;
         }
 
-        public override void Execute(object parameter)
+        public override async void Execute(object parameter)
         {
             switch (parameter.ToString())
             {
                 case "Refresh":
                     OpenWeatherMap weatherAPI = new OpenWeatherMap("a4c86f773df0a9b3fb2b9b49b203621f");
-                    weatherAPI.GetWeather(51.16557f, 4.98917f);
+                    await weatherAPI.GetWeather(51.16557f, 4.98917f);
                     break;
             }
         }
