@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:WeatherApp.Views"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="DisplayView" Height="450" Width="800">
+        Title="DisplayView" Height="400" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -16,16 +16,30 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TabControl Grid.Column="0" Margin="5" Grid.ColumnSpan="3">
-            <TabItem Header="Daily Forecast"></TabItem>
+        <TabControl Grid.Column="0" Margin="5" Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <TabItem Header="Daily Forecast">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
             <TabItem Header="Weather stats"></TabItem>
         </TabControl>
         <GroupBox Grid.Column="3"  Margin="5" Background="White" Header="Change Location"></GroupBox>
-        <Button  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="1" Margin="5" Content="Refresh" Command="{Binding}" CommandParameter="Refresh"   />
-        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" Grid.Row="1" Grid.Column="3" Margin="5" Content="Quit" Command="{Binding CloseWindowCommand, Mode=OneWay}" 
+        <Button  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="2" Grid.Column="3" Margin="5" Content="Refresh" Command="{Binding}" CommandParameter="Refresh"   />
+        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" Grid.Row="3" Grid.Column="3" Margin="5" Content="Quit" Command="{Binding CloseWindowCommand, Mode=OneWay}" 
         CommandParameter="{Binding ElementName=DisplayWindow}" />
     </Grid>
 </Window>

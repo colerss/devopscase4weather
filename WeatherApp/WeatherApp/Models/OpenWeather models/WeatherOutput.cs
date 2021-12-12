@@ -16,5 +16,6 @@ namespace WeatherApp.Models
         public WeatherReportHourly[] Hourly { get; set; }
         [JsonPropertyName("daily")]
         public WeatherReportDaily[] Daily { get; set; }
+
     }
 }
