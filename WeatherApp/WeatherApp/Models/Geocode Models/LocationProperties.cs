@@ -10,7 +10,7 @@ namespace WeatherApp.Models
         [JsonPropertyName("locality")]
         public string City { get; set; }
         [JsonPropertyName("country")]
-        public string Country { get; set; }
+        public Country Country { get; set; }
 
         public string LocationString { get {return City + ", " + Country ; } }
     }

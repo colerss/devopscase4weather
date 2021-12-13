@@ -5,7 +5,7 @@
              Startup="Application_Startup">
     <Application.Resources>
         <ResourceDictionary>
-            <FontFamily x:Key="FontAwesome">/Fonts/FontAwesomeRegular</FontFamily>
+            <FontFamily x:Key="FontAwesome">/WeatherApp;component/Fonts/FontAwesomeSolid.otf#Font Awesome 5 Free Solid</FontFamily>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
@@ -15,3 +15,4 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+

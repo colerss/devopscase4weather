@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
+            "FontAwesome.WPF": {
+              "target": "Package",
+              "version": "[4.7.0.9, )"
+            },
             "MaterialDesignColors": {
               "target": "Package",
               "version": "[2.0.3, )"
@@ -51,6 +55,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "MvvmLightLibs": {
               "target": "Package",
