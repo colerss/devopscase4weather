@@ -11,5 +11,6 @@ namespace WeatherApp.Models
         public RealTemperatures Temp { get; set; }
         [JsonPropertyName("feels_like")]
         public Temperatures FeltTemp { get; set; }
+
     }
 }

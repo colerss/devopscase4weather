@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         Background="Turquoise"
         xmlns:local="clr-namespace:WeatherApp.Views"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="DisplayView" Height="400" Width="600">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:mainviewmodels="clr-namespace:WeatherApp.ViewModels.MainViewModels" d:DataContext="{d:DesignInstance Type=mainviewmodels:DisplayViewModel}"
+        Title="DisplayView" Height="400" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -33,6 +34,121 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+                    <GroupBox Margin="10">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="Today" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label FontFamily="{StaticResource FontAwesome}" Content="&#xf004;" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Current.TempString}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[0].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Current.WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Grid.Column="1">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="Tomorrow" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Daily[1].Temp.DayTemp}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[1].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Daily[1].WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Grid.Column="2">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="{Binding WeatherReport.Daily[2].DayOfWeek}" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Daily[2].Temp.DayTemp}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[2].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Daily[2].WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Grid.Row="1">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="{Binding WeatherReport.Daily[3].DayOfWeek}" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Daily[3].Temp.DayTemp}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[3].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Daily[3].WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Grid.Row="1" Grid.Column="1">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="{Binding WeatherReport.Daily[4].DayOfWeek}" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Daily[4].Temp.DayTemp}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[4].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Daily[4].WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Grid.Row="1" Grid.Column="2">
+                        <GroupBox.Header>
+                            <TextBlock Foreground="White" Text="{Binding WeatherReport.Daily[5].DayOfWeek}" TextAlignment="Center"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="1" Content="{Binding WeatherReport.Daily[5].Temp.DayTemp}" Foreground="Red" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding WeatherReport.Daily[5].Temp.NightTemp}" Foreground="Blue" VerticalAlignment="Center" Padding="5 2" ></Label>
+                            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding WeatherReport.Daily[5].WeatherState.Readable}"  VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Weather stats"></TabItem>

@@ -12,5 +12,9 @@ namespace WeatherApp.Models
 
         [JsonPropertyName("feels_like")]
         public float FeelsLike { get; set; }
+
+        public string TempString { get {
+                return Temp + " °C";
+            } }
     }
 }

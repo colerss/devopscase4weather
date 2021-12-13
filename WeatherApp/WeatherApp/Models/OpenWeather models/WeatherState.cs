@@ -10,6 +10,15 @@ namespace WeatherApp.Models
         [JsonPropertyName("main")]
         public string Main { get; set; }
         [JsonPropertyName("description")]
-        public string description { get; set; }
+        public string Description { get; set; }
+
+        public string Icon { get
+            {
+                return "Sun";
+            } }
+        public string Readable { get {
+                return Description.UcFirst(); 
+            
+            } }
     }
 }

@@ -22,10 +22,22 @@ namespace WeatherApp.Models
         [JsonPropertyName("weather")]
         public WeatherState[] Weather { get; set; }
 
+        public WeatherState WeatherState { get
+            {
+                return Weather[0];
+            } }
         public DateTime Datetime { get {
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                 dtDateTime = dtDateTime.AddSeconds(Dt).ToLocalTime();
                 return dtDateTime;
                  } }
+
+        public string DayOfWeek
+        {
+            get
+            {
+                return Datetime.DayOfWeek.ToString();
+            }
+        }
     }
 }

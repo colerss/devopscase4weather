@@ -12,5 +12,15 @@ namespace WeatherApp.Models
         [JsonPropertyName("max")]
         public float Max { get; set; }
 
+        public string NightTemp { get {
+                return Min + " °C";
+            } }
+        public string DayTemp
+        {
+            get
+            {
+                return Max + " °C";
+            }
+        }
     }
 }
