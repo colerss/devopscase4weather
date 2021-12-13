@@ -52,13 +52,14 @@ namespace WeatherApp.ViewModels.MainViewModels
             LocationData = new LocationProperties();
             Countries = new ObservableCollection<Country>(countryRepository.GetCountries());
             LocationData.City = "Geel";
-            LocationData.Country = Countries.Where(x => x.Name == "Belgium").FirstOrDefault();
+            LocationData.Country = Countries.Where(x => x.Name == "Belgium").FirstOrDefault().Name;
             InitializeApi();
         }
 
         private async void InitializeApi()
         {
-            lastLocation =  (await geoapi.GetLocationByName(LocationData.City, LocationData.Country.Name)).Location;
+            GeocodeOutput output =  await geoapi.GetLocationByName(LocationData.City, LocationData.Country);
+            lastLocation = output.Location;
             WeatherReport = await weatherapi.GetWeather(lastLocation.Geometry.Latitude, lastLocation.Geometry.Longitude);
         }
 
@@ -72,7 +73,7 @@ namespace WeatherApp.ViewModels.MainViewModels
             switch (parameter.ToString())
             {
                 case "Refresh":
-                    lastLocation = (await geoapi.GetLocationByName(LocationData.City, LocationData.Country.Name)).Location;
+                    lastLocation = (await geoapi.GetLocationByName(LocationData.City, LocationData.Country)).Location;
                     WeatherReport = await weatherapi.GetWeather(lastLocation.Geometry.Latitude, lastLocation.Geometry.Longitude);
                     break;
             }

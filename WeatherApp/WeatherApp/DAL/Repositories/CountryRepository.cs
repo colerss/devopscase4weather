@@ -37,7 +37,7 @@ namespace WeatherApp.DAL.Repositories
             using (var connection = DbConnectionFactory())
             {
                 connection.Open();
-                return connection.Execute(sql, new { CountryName = countryname });
+                return connection.Execute(sql, new { Name = countryname });
             }
         }
 
@@ -54,7 +54,7 @@ namespace WeatherApp.DAL.Repositories
         public int InsertAllCountries()
         {
             string sql = "INSERT INTO Countries(Name) VALUES('Afghanistan');" +
-                "INSERT INTO Countries(Name) VALUES('Albania')" +
+                "INSERT INTO Countries(Name) VALUES('Albania');" +
             "Insert INTO Countries(Name) VALUES('Algeria');" +
             "Insert INTO Countries(Name) VALUES('Andorra');" +
             "Insert INTO Countries(Name) VALUES('Angola');" +

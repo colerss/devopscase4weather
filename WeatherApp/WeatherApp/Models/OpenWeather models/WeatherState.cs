@@ -15,7 +15,7 @@ namespace WeatherApp.Models
         public string IconRaw { get; set; }
         public string Icon { get
             {
-                string isocode = "f004";
+                string isocode = "\uf743";
                 switch (IconRaw)
                 {
                     case "01d":
@@ -29,6 +29,9 @@ namespace WeatherApp.Models
                         break;
                     case "04d":
                         isocode = "\uf0c2";
+                        break;
+                    case "09d":
+                        isocode = "\uf743";
                         break;
                     case "10d":
                         isocode = "\uf743";
@@ -47,6 +50,9 @@ namespace WeatherApp.Models
                         break;
                     case "04n":
                         isocode = "\uf0c2";
+                        break;
+                    case "09n":
+                        isocode = "\uf73c";
                         break;
                     case "10n":
                         isocode = "\uf73c";
