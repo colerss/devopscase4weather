@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:WeatherApp.Views"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:mainviewmodels="clr-namespace:WeatherApp.ViewModels.MainViewModels" 
-        Title="DisplayView" Height="400" Width="700">
+        Title="DisplayView" Height="450" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -160,11 +160,31 @@
                 <TextBlock Foreground="White" Text="Change Location"  TextAlignment="Center"/>
             </GroupBox.Header>
             <StackPanel>
-                <TextBox Margin="10" materialDesign:HintAssist.Hint="City" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding LocationData.City, ValidatesOnDataErrors=True}"></TextBox>
-                <ComboBox Margin="10" ItemsSource="{Binding Countries}"  SelectedValue="{Binding LocationData.Country}" SelectedValuePath="Name" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Country" materialDesign:HintAssist.FloatingScale="1.5" materialDesign:HintAssist.FloatingOffset="0, -24" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <TextBox Margin="10 5" materialDesign:HintAssist.Hint="City" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding LocationData.City, ValidatesOnDataErrors=True}"></TextBox>
+                <ComboBox Margin="10 10" ItemsSource="{Binding Countries}"  SelectedValue="{Binding LocationData.Country}" SelectedValuePath="Name" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Country" materialDesign:HintAssist.FloatingScale="1.5" materialDesign:HintAssist.FloatingOffset="0, -24" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 </ComboBox>
             </StackPanel>
         </GroupBox>
+        <GroupBox Grid.Column="3" Grid.Row="1" Background="White" Margin="5">
+            <GroupBox.Header>
+                <TextBlock Foreground="White" Text="Hourly Stats"  TextAlignment="Center"/>
+            </GroupBox.Header>
+            <StackPanel  >
+                <Label HorizontalAlignment="Center" FontSize="10" >TEMPERATURE</Label>
+                <Polyline Margin="10 0" Tag="Temperature" Stroke="Red"  Height="50" Points="{Binding WeatherReport.TempPoints}" >
+                    <Polyline.LayoutTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="-1" />
+                    </Polyline.LayoutTransform>
+                </Polyline>
+                <Label HorizontalAlignment="Center" FontSize="10" >CLOUDINESS</Label>
+                <Polyline Margin="10 0" Tag="Temperature" Stroke="Blue" Height="50" Points="{Binding WeatherReport.RainPoints}">
+                    <Polyline.LayoutTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="-1"  />
+                    </Polyline.LayoutTransform>
+                </Polyline>
+            </StackPanel>
+        </GroupBox>
+        
         <Button  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="2" Grid.Column="3" Margin="5" Content="Refresh" Command="{Binding}" CommandParameter="Refresh"   />
         <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" Grid.Row="3" Grid.Column="3" Margin="5" Content="Quit" Command="{Binding CloseWindowCommand, Mode=OneWay}" 
         CommandParameter="{Binding ElementName=DisplayWindow}" />
