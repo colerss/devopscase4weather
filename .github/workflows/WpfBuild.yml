@@ -31,3 +31,9 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name: Publish
       run: dotnet publish
+
+    - name: Upload WebApp1 Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: WeatherApp
+        path: D:\a\devopscase4weather\devopscase4weather\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.1\publish\
