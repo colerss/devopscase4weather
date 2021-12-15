@@ -27,11 +27,8 @@ jobs:
       
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: ./WeatherApp
       
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-      working-directory: WeatherApp
     - name: Publish
       run: dotnet publish
-      working-directory: ./WeatherApp
